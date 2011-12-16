@@ -17,3 +17,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with GrowPoodle.  If not, see <http://www.gnu.org/licenses/>.
 
+==========================
+USAGE
+==========================
+
+Change line 15 for the video device you're using: 
+
+  video = new GSCapture(this, ancho, alto, 10, "/dev/video0"); //linux
+
