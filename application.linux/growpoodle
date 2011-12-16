@@ -1,0 +1,4 @@
+#!/bin/sh
+
+APPDIR=$(dirname "$0")
+java  -Djava.library.path="$APPDIR" -cp "$APPDIR/lib/growpoodle.jar:$APPDIR/lib/core.jar:$APPDIR/lib/jna.jar:$APPDIR/lib/GSVideo.jar:$APPDIR/lib/gstreamer-java.jar" growpoodle
