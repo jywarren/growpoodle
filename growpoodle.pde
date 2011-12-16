@@ -2,8 +2,8 @@ import codeanticode.gsvideo.*; //linux
 
 GSCapture video; //linux
 
-int ancho = 640; 
-int alto = 480; 
+int ancho = 1280; 
+int alto = 1024; 
 int area = ancho*alto; 
 int tiempo = 8;
 boolean screengrab = false;
@@ -12,11 +12,12 @@ void setup()
 { 
   size(ancho, alto); 
   background(0); 
-  video = new GSCapture(this, ancho, alto, 10, "/dev/video0"); //linux
+  video = new GSCapture(this, ancho, alto, 10, "/dev/video1"); //linux
   video.play(); //linux only
 } 
  
 void draw() {
+  if (screengrab) saveImage();
   loadPixels(); 
   for (int i=0;i<area;i++) 
   { 
@@ -28,9 +29,17 @@ void draw() {
     pixels[i] = rgb;
   } 
   updatePixels();
+  if (screengrab) {
+    image( video, 0, 0 ); 
+    screengrab = false;
+  }
 } 
 
-void mousePressed() 
+void mousePressed() {
+   screengrab = true;
+}
+
+void saveImage() 
   { 
     StringBuilder builder = new StringBuilder();
     builder.append(year());
@@ -39,7 +48,6 @@ void mousePressed()
     builder.append("-"+hour());
     builder.append("-"+minute());
     save(builder.toString()+".png");
-    image( video, 0, 0 ); 
   } 
 
 public void captureEvent(GSCapture c) { //linux
