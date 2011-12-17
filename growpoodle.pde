@@ -23,6 +23,7 @@ void draw() {
   { 
     int rgb = pixels[i];
     int vid = video.pixels[i];
+    // we can make this more efficient with byte math:
     if (red(vid) > red(rgb)) rgb = color(red(vid),green(rgb),blue(rgb));
     if (green(vid) > green(rgb)) rgb = color(red(rgb),green(vid),blue(rgb));
     if (blue(vid) > blue(rgb)) rgb = color(red(rgb),green(rgb),blue(vid));
@@ -54,3 +55,12 @@ public void captureEvent(GSCapture c) { //linux
   c.read();
 }
 
+void keyPressed() {
+  if (key == CODED) {
+  }
+  if (key == RETURN || key == ENTER) {
+    image( video, 0, 0 ); 
+  } else if (key == ' ') {
+    screengrab = true;
+  }
+}
