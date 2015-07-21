@@ -1,0 +1,34 @@
+Barebones Linux clone of Eric Rosenbaum's GlowDoodle. Can mimic HD timelapse photos (ish) with a webcam.
+
+==========================
+LICENSE
+==========================
+
+GrowPoodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+GrowPoodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GrowPoodle.  If not, see <http://www.gnu.org/licenses/>.
+
+==========================
+USAGE
+==========================
+
+Requires gstreamer:
+sudo apt-get install gstreamer-tools 
+sudo apt-get install libgstreamer-plugins-base0.10-dev libgstreamer0.10-dev libglib2.0-dev 
+sudo apt-get install libgtk2.0-dev 
+
+and GSVideo library which I downloaded from http://sourceforge.net/projects/gsvideo/files/gsvideo/1.0/
+
+Change line 15 for the video device you're using: 
+
+  video = new GSCapture(this, ancho, alto, 10, "/dev/video0"); //linux
+
