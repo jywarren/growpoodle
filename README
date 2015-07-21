@@ -20,8 +20,18 @@ along with GrowPoodle.  If not, see <http://www.gnu.org/licenses/>.
 ==========================
 USAGE
 ==========================
+Only tested on Ubuntu 14.04 and Processing 2.0+
+
+Requires gstreamer and GSVideo:
+sudo apt-get install gstreamer-tools 
+sudo apt-get install libgstreamer-plugins-base0.10-dev libgstreamer0.10-dev libglib2.0-dev 
+sudo apt-get install libgtk2.0-dev 
+
+GSVideo library: which can be downloaded from http://sourceforge.net/projects/gsvideo/files/gsvideo/1.0/
 
 Change line 15 for the video device you're using: 
 
   video = new GSCapture(this, ancho, alto, 10, "/dev/video0"); //linux
+
+
 
