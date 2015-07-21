@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <headerType>gui</headerType>
+  <dontWrapJar>true</dontWrapJar>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <outfile>/home/ephemeral/Programs/growpoodle/application.windows32/growpoodle.exe</outfile>
+  <icon>/home/ephemeral/Programs/processing-2.2.1/modes/java/application/sketch.ico</icon>
+  <classPath>
+    <mainClass>growpoodle</mainClass>
+    <cp>lib/growpoodle.jar</cp>
+    <cp>lib/core.jar</cp>
+    <cp>lib/jogl-all.jar</cp>
+    <cp>lib/gluegen-rt.jar</cp>
+    <cp>lib/jogl-all-natives-windows-i586.jar</cp>
+    <cp>lib/gluegen-rt-natives-windows-i586.jar</cp>
+    <cp>lib/GSVideo.jar</cp>
+    <cp>lib/gstreamer-java.jar</cp>
+    <cp>lib/jna.jar</cp>
+  </classPath>
+  <jre>
+    <minVersion>1.7.0_40</minVersion>
+    <opt>-Djna.nosys=true</opt>
+  </jre>
+</launch4jConfig>
